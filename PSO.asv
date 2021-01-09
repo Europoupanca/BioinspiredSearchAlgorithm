@@ -16,7 +16,6 @@ quality = @(x,y) -20*exp(-0.2*(sqrt(0.5*(x.^2+y.^2))))-exp(0.5*(cos(2*pi*x)+cos(
 %Area de Pesquisa
 Area = 32.768;
 %Area = 2;
-%Area = 20;
 MaxArea = Area;
 MinArea = -Area;
 
@@ -42,7 +41,14 @@ hold on
     %em 3D
 
 subplot(1,2,2)
-axis([MinArea MaxArea MinArea MaxArea])
+if Area>2
+   Zmin = -5;
+   Zmax = 25;
+else
+   Zmin = -2;
+   Zmax = 8;
+end
+axis([MinArea MaxArea MinArea MaxArea Zmin Zmax])
 contour3(x1,x2,fx,20);
 splot=surf(x1,x2,fx,'FaceAlpha',0.25);
 splot.EdgeColor = 'none';
