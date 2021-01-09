@@ -19,7 +19,6 @@ Area = 32.768;
 %Area = 20;
 MaxArea = Area;
 MinArea = -Area;
-
 x1 = linspace(MinArea,MaxArea,100);
 x2 = linspace(MinArea,MaxArea,100);
 
